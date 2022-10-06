@@ -1,0 +1,26 @@
+<section>
+
+    <div class="center_info">
+        <h2 class="title text-center">Акції</h2>
+    </div>
+
+    <div class="action_list">
+        <ul>
+            <li *ngFor="let action of actions">
+                <a class="action_link">
+                    <div [routerLink]="[ '/action/'+action.id ]" class="action_image">
+                        <img [src]="action.images" class="action_image">
+                    </div>
+                    <h3 [routerLink]="[ '/action/'+action.id ]">{{ action.name }}</h3>
+                </a>
+                <hr>
+                <button [routerLink]="[ '/action/'+action.id ]" class="btn " data-rel="address" type="button">Дізнатись більше</button>
+
+            </li>
+        </ul>
+
+
+
+    </div>
+
+</section>

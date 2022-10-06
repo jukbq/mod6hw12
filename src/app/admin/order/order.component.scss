@@ -1,0 +1,53 @@
+section {
+    width: 100vw;
+    padding: 20px 40px;
+    table {
+        width: 90%;
+        margin-top: 20px;
+        thead tr {
+            border-bottom: 2px solid #b5d8f7;
+        }
+        tbody {
+            .user_order {
+                border-bottom: 0.5px solid #b5d8f7;
+                .сustomer {
+                    width: 25%;
+                    tr td {
+                        padding-right: 15px;
+                    }
+                }
+                .order {
+                    display: flex;
+                    border-bottom: 0.5px solid #b5d8f7;
+                    .order_info {
+                        width: 50%;
+                        .titel {
+                            padding-right: 15px;
+                        }
+                        .info {
+                            padding-right: 15px;
+                        }
+                    }
+                    .image {
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        img {
+                            height: 75px
+                        }
+                    }
+                }
+                .btn_tr {
+                    width: 15%;
+                    a {
+                        text-decoration: none;
+                        color: #b5d8f7;
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}

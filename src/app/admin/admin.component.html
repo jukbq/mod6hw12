@@ -1,0 +1,14 @@
+<section>
+    <ul class="admin_menu">
+        <li [routerLink]="[ item.link ]" routerLinkActive="active" *ngFor="let item of list" (click)="onSelectItem(item)" [class.active]="item == activeItem">
+            <a class="nav-link">{{item.name}}</a>
+        </li>
+
+        <button (click)="logout()" class="btn " data-rel="address" type="button">ВИЙТИ</button>
+
+    </ul>
+    <div class="aadmin_category">
+        <router-outlet></router-outlet>
+    </div>
+
+</section>

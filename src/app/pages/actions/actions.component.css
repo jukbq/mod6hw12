@@ -1,0 +1,94 @@
+section {
+  width: 100vw;
+  height: auto;
+  margin-top: 170px;
+}
+section .center_info {
+  margin: 0 auto;
+  max-width: 550px;
+  text-align: center;
+}
+section .center_info H2 {
+  position: relative;
+  display: inline-block;
+  padding-top: 10px;
+  font-family: "RotondaC";
+  font-size: 42px;
+  line-height: 1.2em;
+  z-index: -1;
+}
+section .center_info H2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  width: 100%;
+  height: 5px;
+  background: #b5d8f7;
+}
+section .action_list {
+  width: 80%;
+  margin: 0 auto;
+}
+section .action_list ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+section .action_list ul li {
+  width: 48%;
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+section .action_list ul li .action_link {
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  transition: 0.5s;
+  cursor: pointer;
+}
+section .action_list ul li .action_link:hover {
+  color: #b5d8f7;
+}
+section .action_list ul li .action_link .action_image {
+  width: 100%;
+  height: 325px;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 26px;
+}
+section .action_list ul li .action_link .action_image img {
+  display: block;
+  transition: 0.5s;
+}
+section .action_list ul li .action_link .action_image img:hover {
+  transform: scale(1.03);
+}
+section .action_list ul li hr {
+  width: 100%;
+  height: 3px;
+  background-color: #b5d8f7;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+section .action_list ul li .btn {
+  border: 2px solid #b5d8f7;
+  background: #b5d8f7;
+  transition: 0.35s;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  padding: 16px 22px;
+  color: #252525;
+}
+section .action_list ul li .btn:hover {
+  background: #fff;
+}

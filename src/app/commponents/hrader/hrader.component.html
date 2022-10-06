@@ -1,0 +1,102 @@
+<header [ngClass]="{'basketActive': basketActive}">
+
+    <!--------------------Логотип---------------------->
+    <div class="logo" [routerLink]="[ '/home/all' ]">
+        <img src="https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Flogo.svg?alt=media&token=57f422ef-24a6-4a4e-b661-3ce0ee695559" class="img-fluid" alt="" srcset="">
+    </div>
+
+
+    <!--------------------Горизонтальне меню--------------------->
+    <div class="menu">
+        <ul class="nav">
+            <li class="nav-item border_animation">
+                <a class="nav-link" [routerLink]="[ '/action' ]">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Faction.svg?alt=media&token=62291298-1735-45d8-9c2f-2bbc88a7e82e" lass="img-fluid" alt="" srcset=""> Акції
+                </a>
+            </li>
+            <li class="nav-item border_animation">
+                <a class="nav-link" [routerLink]="[ '/roles/all' ]">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Froly.svg?alt=media&token=7b2f54fa-958a-4731-baed-64f1941cc167" lass="img-fluid" alt="" srcset=""> Роли
+                </a>
+            </li>
+            <li class="nav-item border_animation">
+                <a class="nav-link" [routerLink]="[ '/goodsPage/Сети' ]" outerLinkActive="route-active" aria-current="page">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Fsets.svg?alt=media&token=d66ff6c2-1d13-4dcb-a3ce-6de99806033c" lass="img-fluid" alt="" srcset=""> Сети
+                </a>
+            </li>
+            <li class="nav-item border_animation">
+                <a class="nav-link" [routerLink]="[ '/goodsPage/Напої' ]" outerLinkActive="route-active" aria-current="page">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Fdrinks.svg?alt=media&token=7bde3222-1243-46bf-a72b-148dbdbb5985" lass="img-fluid" alt="" srcset=""> Напої
+                </a>
+            </li>
+            <li class="nav-item border_animation">
+                <a class="nav-link" [routerLink]="[ '/goodsPage/Соус' ]" outerLinkActive="route-active" aria-current="page">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Fsous.svg?alt=media&token=bf5dd223-9bcc-4422-987c-f7ad19800a08" lass="img-fluid" alt="" srcset=""> Соуси
+                </a>
+            </li>
+        </ul>
+
+        <!--------------------Бургер  меню--------------------->
+
+        <div class="wrap_menu border_animation" (click)="activeClass=!activeClass;">
+            <button type="button" [ngClass]="{'active': !activeClass}" class="btn
+                menu_icon" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+            <ul class="nav burger_menu" [ngClass]="{'activeBurgher':
+                !activeClass}">
+                <li class="nav-item ">
+                    <a class="nav-link" [routerLink]="[ '/delivery' ]">Доставка
+                        та оплата</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" [routerLink]="[ '/about-us' ]">Про нас</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" [routerLink]="[ '/action']">Акції</a>
+                </li>
+            </ul>
+        </div>
+
+        <!--------------------ЗВоротній зв`зок--------------------->
+
+        <button class=" call_back ">
+            <img
+                src="https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Fphone.svg?alt=media&token=66846352-38be-4f67-8a73-527f26f64bf2"
+                lass="img-fluid " alt=" " srcset=" ">
+            <span>МИ ЗАТЕЛЕФОНУЄМО</span>
+        </button>
+
+
+        <!----------------КОнтакти---------------------------->
+
+        <div class="kontact_ibfo ">
+            <a class="header-phone " href="tel:0978780837 ">(097) 878 08 37</a>
+            <div class="header-work-time ">Працюємо з <b>11:00</b> до <b>21:30</b></div>
+        </div>
+
+        <!----------Вхід користувача------------------------------->
+
+
+        <div *ngIf="!isLogin" class="btn header_user border_animation" (click)="sighInModal()">
+            <img src="https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Fuser.svg?alt=media&token=dc8a6f9b-0e17-4daa-ae19-0325467c0fc1" lass="img-fluid " alt=" " srcset=" ">
+        </div>
+
+        <div *ngIf="isLogin" class="header_user border_animation" [routerLink]="[ '/' + loginUrl]">
+            <img src="https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Fuser.svg?alt=media&token=dc8a6f9b-0e17-4daa-ae19-0325467c0fc1" lass="img-fluid " alt=" " srcset=" ">
+        </div>
+
+    </div>
+
+
+    <!-----------------Кошик--------------------------->
+    <button type="button" class="btn header_basket" (click)="openBasket()">
+         <img
+            src="https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Fbasket.svg?alt=media&token=f7e95ed7-9358-4217-9f4c-ba4bc665db4f"
+            lass="img-fluid " alt=" " srcset=" ">
+        <span class="count">{{count}}</span>
+        <span class="summ"><b>{{summ}}</b> грн.</span>
+    </button>
+</header>

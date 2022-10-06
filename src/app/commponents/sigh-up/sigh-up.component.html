@@ -1,0 +1,27 @@
+<form [formGroup]="sighUoForn" (ngSubmit)="userRegister()" class="modal-content">
+    <button type="button" class="btn-close" (click)="close()" aria-label="Закрити"></button>
+    <h3 class="modal-title">Вхід в кабінет</h3>
+    <div class="modal-body">
+        <div class="user_name">
+            <input formControlName="firstname" name="firstname" type="text" class="form-control" placeholder="Ваше ім`я:">
+            <input formControlName="lastname" name="lastname" type="text" class="form-control" placeholder="Ваше прізвище:">
+        </div>
+        <br>
+        <div class="user_contact">
+            <input formControlName="phone" name="phone" type="number" class="form-control" placeholder="Ваше телефон:">
+            <br>
+            <input formControlName="email" name="email" type="text" class="form-control" placeholder="Ваш email:">
+        </div>
+        <br>
+        <div class="user_name">
+            <input formControlName="password" name="password" type="password" class="form-control" placeholder="Пароль:">
+            <input formControlName="password2" name="password2" type="password" class="form-control" placeholder="Повторыть пароль:">
+        </div>
+    </div>
+    <div class="login_button">
+        <button type="submit" class="btn">ЗАРЕЄСТРУВВАТИСЬ</button>
+
+        <a (click)="sighInMaoal()">Вже зареєстровані? Увійти</a>
+
+    </div>
+</form>

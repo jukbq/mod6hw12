@@ -1,0 +1,40 @@
+<ul class="order_list">
+    <div class="empty_basket">
+        <img src="https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/icon%2Fcart-empty-img.svg?alt=media&token=587c9be7-2f4a-45b4-b254-b4b858c1f2c0" lass="img-fluid " alt=" " srcset=" ">
+        <p>Кошик порожній</p>
+        <button (click)="closeBasket()" type="button" class="btn btn-primary">ПЕРЕЙТИ ДО КАТАЛОГУ</button>
+    </div>
+    <li class="order_good" *ngFor="let order of basket">
+        <div class="img">
+            <a target="_blank" [routerLink]="[
+                    '/home/'+order.component.link, order.id ]">
+                <div class="image">
+                    <img [src]="order.images">
+                </div>
+            </a>
+        </div>
+        <div class="name">
+            <a target="_blank" [routerLink]="[
+                    '/home/'+order.component.link, order.id ]">
+                    {{order.name}}
+                </a>
+        </div>
+        <div class="count_price">
+            <div class="quantity_goods">
+                <button (click)="quantity_goods(order, false)" type="button" class="decrement">-</button>
+                <input [value]="order.count" readonly="" class="goods_qty" tabindex="-1" max="999">
+                <button (click)="quantity_goods(order, true)" type="button" class="increment">+</button>
+            </div>
+            <div class="price_default">
+                <b class="price">{{order.price}}</b> грн </div>
+            <button type="button" class="btn" (click)="delOrder(order)">
+                    <fa-icon [icon]="trashIcon"></fa-icon>
+                </button>
+        </div>
+    </li>
+</ul>
+<div class="modal-footer">
+    <span class="summ">Сума <b>{{summ}}</b> грн.</span>
+    <button (click)="addOrder(basket)" type="button" class="btn
+            btn-primary" data-bs-dismiss="modal">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
+</div>

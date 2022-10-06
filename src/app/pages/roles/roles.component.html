@@ -1,0 +1,53 @@
+<section>
+
+    <div class="center_info">
+        <h2 class="title text-center">Роли</h2>
+    </div>
+
+</section>
+
+<!--Товари-->
+<section class="goods_section">
+
+    <ul class="components_menu">
+        <li [routerLink]="[ '/roles/' + component.link ]" routerLinkActive="active" *ngFor="let component of listCommponenet; let i= index" (click)="onSelectItem(component)" [class.active]="component ==
+                activeItem">
+            <a class="nav-link">{{component.name}}</a>
+        </li>
+    </ul>
+
+
+
+    <!--ТОвари-->
+
+    <ul class="goods">
+        <li class="goods_block border_animation" *ngFor="let goods of goodsArr">
+
+            <div [routerLink]="[ '/roles/'+goods.component.link, goods.id ]" class="goods_image">
+                <img [src]="goods.images" class="goodsn_image">
+
+            </div>
+            <a [routerLink]="[ '/roles/'+goods.component.link, goods.id ]" c class="goods_title" href="#" itemprop="name">{{goods.name}}</a>
+
+            <div class="goods_desc">
+                <p>{{ goods.compound}}</p>
+                <p class="goods_weight">{{goods.weight}} г </p>
+            </div>
+            <div class="goods_controls">
+                <p class="goods_price">{{goods.price}} г </p>
+
+
+                <div class="quantity_goods">
+                    <button (click)="quantity_goods(goods, false)" type="button" class="decrement">-</button>
+                    <input [value]="goods.count" readonly="" class="goods_qty" tabindex="-1" max="999">
+                    <button (click)="quantity_goods(goods, true)" type="button" class="increment">+</button>
+                </div>
+                <button (click)="addToBasket(goods)" class="btn btn-small btn-primary order-btn
+                    add-to-cart-btn" data-id="32617">Замовити</button>
+            </div>
+        </li>
+    </ul>
+
+
+
+</section>

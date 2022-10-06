@@ -1,0 +1,139 @@
+    .order_list {
+        list-style: none;
+        padding: 10px;
+        margin-bottom: 0;
+        .empty_basket {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            img {
+                margin-bottom: 10px;
+            }
+            p {
+                padding: 10px;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            .btn {
+                padding: 16px 44px;
+                background: #b5d8f7;
+                transition: .35s;
+                text-transform: uppercase;
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: bold;
+                border-radius: 10px;
+                color: #252525;
+                &:hover {
+                    background: none;
+                    border: 1px solid #b5d8f7;
+                    color: black;
+                }
+            }
+        }
+        .closrEmptyBasket {
+            display: none;
+        }
+        .order_good {
+            height: 110px;
+            display: flex;
+            align-items: center;
+            border-bottom: 0.5px solid #b5d8f7;
+            .img {
+                width: 20%;
+                height: 100%;
+                .image {
+                    width: 130px;
+                    height: 100%;
+                    padding: 0 10px;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .name {
+                width: 30%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                a {
+                    padding-left: 30px;
+                }
+            }
+            .count_price {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                .quantity_goods {
+                    height: 40px;
+                    display: inline-flex;
+                    align-items: center;
+                    border: 1px solid #dcdcdc;
+                    border-radius: 8px;
+                    color: #252525;
+                    font-size: 16px;
+                    line-height: 16px;
+                    .decrement,
+                    .increment {
+                        width: 18px;
+                        margin: 2px;
+                        border: none;
+                        background: none;
+                        font-size: 16px;
+                    }
+                    .goods_qty {
+                        width: 30px;
+                        font-weight: 600;
+                        text-align: center;
+                        border: none;
+                    }
+                }
+                .btn {
+                    width: 40px;
+                    height: 28px;
+                    border: none;
+                }
+            }
+        }
+    }
+    
+    .modal-footer {
+        width: 100%;
+        height: 110px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        background-color: #b5d8f7;
+        background-image: url("https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Fbg-monosushi-logo.svg?alt=media&token=02a30263-a564-4974-953e-ed4c45a4fef5"), url("https://firebasestorage.googleapis.com/v0/b/mod6-progect.appspot.com/o/assets%2Ficon%2Fbg-monosushi-logo.svg?alt=media&token=02a30263-a564-4974-953e-ed4c45a4fef5");
+        background-repeat: repeat;
+        background-position: 0 0, 190px -52px;
+        .summ {
+            b {
+                font-size: 130%;
+            }
+        }
+        .btn {
+            background: #fff;
+            transition: .35s;
+            text-transform: uppercase;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: bold;
+            padding: 16px 22px;
+            border-radius: 10px;
+            color: #252525;
+            border: 2px solid #fff;
+            &:hover {
+                background: none;
+                ;
+            }
+        }
+    }

@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'RotondaC';
+    src: url("/assets/fonts/rotondac-bold.otf")
+}
+
+$breadcrumb-divider: quote(">");
+section {
+    width: 100vw;
+    height: auto;
+    margin-top: 130px;
+    .item_details {
+        width: 80%;
+        display: flex;
+        margin: auto;
+        .goods_image {
+            width: 50%;
+            height: 400px;
+            position: relative;
+            align-items: center;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                transition: 0.5s;
+            }
+        }
+        .product_description {
+            width: 50%;
+            height: 400px;
+            font-family: 'RotondaC';
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 95px;
+            .title {
+                font-size: 42px;
+                line-height: 1.2em;
+                margin-bottom: 30px;
+            }
+            .description,
+            .product_size {
+                margin-bottom: 6px;
+                b {
+                    color: #b5d8f7;
+                }
+            }
+            .product_detail {
+                margin-top: 60px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .product_price {
+                    font-weight: bold;
+                    color: #252525;
+                    font-size: 24px;
+                }
+            }
+            .quantity_goods {
+                display: inline-flex;
+                align-items: center;
+                border: 1px solid #dcdcdc;
+                border-radius: 10px;
+                color: #252525;
+                font-size: 16px;
+                line-height: 16px;
+                margin-right: auto;
+                margin-left: auto;
+                .decrement,
+                .increment {
+                    width: 28px;
+                    margin: 2px;
+                    border: none;
+                    background: none;
+                    font-size: 26px;
+                }
+                .goods_qty {
+                    width: 30px;
+                    height: 44px;
+                    font-weight: 600;
+                    text-align: center;
+                    border: none;
+                }
+            }
+            .btn {
+                padding: 16px 44px;
+                background: #b5d8f7;
+                transition: .35s;
+                text-transform: uppercase;
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: bold;
+                border-radius: 10px;
+                border: 1px solid #b5d8f7;
+                color: #252525;
+                &:hover {
+                    background: none;
+                }
+            }
+        }
+    }
+}

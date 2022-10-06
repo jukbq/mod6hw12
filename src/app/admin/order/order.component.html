@@ -1,0 +1,56 @@
+<section>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Замовник</th>
+                <th scope="col">Товар</th>
+                <th scope="col">Дії</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="user_order" *ngFor="let good of userOrder; let i = index">
+                <td class="nuber">{{i + 1}}</td>
+
+                <td class="сustomer">
+                    <tr>
+                        <td class="titel">
+                            <tr>Ім`я:</tr>
+                            <tr>Пошта: </tr>
+                            <tr>Телефон:</tr>
+                        </td>
+                        <td>
+                            <tr>{{ good.login}}</tr>
+                            <tr>{{ good.email }}</tr>
+                            <tr>{{good.phone }}</tr>
+                        </td>
+                    </tr>
+                </td>
+
+                <td class="order" *ngFor="let order of goodArr[i]">
+                    <tr class="order_info">
+                        <td class="titel">
+                            <tr>Назва:</tr>
+                            <tr>Кількість: </tr>
+                            <tr>Ціна:</tr>
+                        </td>
+                        <td class="info">
+                            <tr>{{order.name}}</tr>
+                            <tr>{{order.count}}</tr>
+                            <tr>{{order.price}}}</tr>
+                        </td>
+                    </tr>
+                    <tr class="image">
+                        <img [src]="order.images">
+                    </tr>
+                </td>
+
+                <td class="btn_tr">
+                    <a (click)="delGood(good)" type="button">Видалити</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>

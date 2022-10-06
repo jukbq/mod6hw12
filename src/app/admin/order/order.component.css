@@ -1,0 +1,52 @@
+@charset "UTF-8";
+section {
+  width: 100vw;
+  padding: 20px 40px;
+}
+section table {
+  width: 90%;
+  margin-top: 20px;
+}
+section table thead tr {
+  border-bottom: 2px solid #b5d8f7;
+}
+section table tbody .user_order {
+  border-bottom: 0.5px solid #b5d8f7;
+}
+section table tbody .user_order .сustomer {
+  width: 25%;
+}
+section table tbody .user_order .сustomer tr td {
+  padding-right: 15px;
+}
+section table tbody .user_order .order {
+  display: flex;
+  border-bottom: 0.5px solid #b5d8f7;
+}
+section table tbody .user_order .order .order_info {
+  width: 50%;
+}
+section table tbody .user_order .order .order_info .titel {
+  padding-right: 15px;
+}
+section table tbody .user_order .order .order_info .info {
+  padding-right: 15px;
+}
+section table tbody .user_order .order .image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section table tbody .user_order .order .image img {
+  height: 75px;
+}
+section table tbody .user_order .btn_tr {
+  width: 15%;
+}
+section table tbody .user_order .btn_tr a {
+  text-decoration: none;
+  color: #b5d8f7;
+  font-size: 18px;
+  font-weight: 500;
+}
