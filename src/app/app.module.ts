@@ -50,6 +50,8 @@ import { PersonalDataComponent } from './user-cabinet/personal-data/personal-dat
 import { OrderHistoryComponent } from './user-cabinet/order-history/order-history.component';
 import { PasswordChangeComponent } from './user-cabinet/password-change/password-change.component';
 import { BasketComponent } from './commponents/basket/basket.component';
+import { providePerformance,getPerformance } from '@angular/fire/performance';
+import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 
 
 
@@ -105,7 +107,9 @@ import { BasketComponent } from './commponents/basket/basket.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     MatSliderModule,
-    MatDialogModule
+    MatDialogModule,
+    providePerformance(() => getPerformance()),
+    provideRemoteConfig(() => getRemoteConfig())
   ],
   providers: [
     ScreenTrackingService, UserTrackingService

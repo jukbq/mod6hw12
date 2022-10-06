@@ -11,3 +11,5 @@ $custom-theme: mat.define-light-theme($custom-theme-primary, $custom-theme-accen
 .cdk-overlay-backdrop {
     background-color: aqua;
 } */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
