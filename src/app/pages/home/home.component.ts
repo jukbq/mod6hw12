@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ComponentsResponse, CopmponentsRequest } from 'src/app/shared/interfaces/components';
 import { GoodsResponse } from 'src/app/shared/interfaces/goods';
@@ -23,6 +23,7 @@ const LIST: any[] = [
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public updateBasket: EventEmitter<void> = new EventEmitter<void>();
 
 
   constructor(
@@ -104,11 +105,10 @@ export class HomeComponent implements OnInit {
     } else {
       basket.push(goods); 
     }
-
-    
    localStorage.setItem('basket', JSON.stringify(basket))
     goods.count = 1
     this.orderService.chageBasket.next(true) 
+    this.updateBasket.emit();
   }
 
 

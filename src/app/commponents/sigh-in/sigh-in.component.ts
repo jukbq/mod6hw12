@@ -18,7 +18,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class SighInComponent implements OnInit, OnDestroy {
 
-  public loginForn!: FormGroup;
+  public loginForm!: FormGroup;
   public user: any;
   public loginSubscription!: Subscription;
 
@@ -47,18 +47,18 @@ export class SighInComponent implements OnInit, OnDestroy {
   }
 
   logFormInit(): void {
-    this.loginForn = this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required]]
     })
   }
 
   loginUser(): void {
-    const { email, password } = this.loginForn.value;
+    const { email, password } = this.loginForm.value;
     this.login(email, password).then(() => {
       this.toastr.success('Користувач успішно автроризувався');
     }).catch(e => {
-      this.toastr.error('Невірний email фбо пароль');
+      this.toastr.error('Невірний email або пароль');
     })
   }
 

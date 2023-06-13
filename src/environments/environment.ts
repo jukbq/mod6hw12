@@ -11,7 +11,7 @@ export const environment = {
     databaseURL: 'https://mod6-progect-default-rtdb.firebaseio.com',
     storageBucket: 'mod6-progect.appspot.com',
     locationId: 'us-central',
-    apiKey: 'AIzaSyBRoFevCizryeFW8NiOoxjzdfBMkfhz_LA',
+    apiKey: 'AIzaSyA0GJMltnNBVahjixqRzUeNe7eZH35yMyk',
     authDomain: 'mod6-progect.firebaseapp.com',
     messagingSenderId: '1096306737929',
   },

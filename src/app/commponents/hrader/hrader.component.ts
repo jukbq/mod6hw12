@@ -93,18 +93,21 @@ loadGasket(){
   };
 
   openBasket(): void {
-    let before = document.querySelector('.header_basket')
-    before?.classList.add('clickBasket')
-    this.basketActive = true;
-    const dialogRef = this.dialog.open(BasketComponent, {
-      panelClass: 'basket_dialog',
-    });
-    dialogRef.afterClosed().subscribe(() => {
-      before?.classList.remove('clickBasket')
-      this.basketActive = false;
-    });
-    dialogRef.beforeClosed().subscribe(() =>{
-      this.addToBasket()
-    })
-  };
+    if (!this.basketActive) {
+      let before = document.querySelector('.header_basket');
+      before?.classList.add('clickBasket');
+      this.basketActive = true;
+      const dialogRef = this.dialog.open(BasketComponent, {
+        panelClass: 'basket_dialog',
+      });
+      dialogRef.afterClosed().subscribe(() => {
+        before?.classList.remove('clickBasket');
+        this.basketActive = false;
+      });
+      dialogRef.beforeClosed().subscribe(() => {
+        this.addToBasket();
+      });
+    }
+  }
+
 };

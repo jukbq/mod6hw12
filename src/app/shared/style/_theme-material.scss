@@ -11,7 +11,7 @@ $custom-theme-warn: mat.define-palette($warn-default-value);
 $custom-theme: mat.define-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
 @include mat.all-component-themes($custom-theme);
 .cdk-overlay-backdrop {
-    background-color: #000000b5;
+    background-color: #2b2a2ab9;
 }
 
 .sigh_maoa_dialog {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LoginResponse } from 'src/app/shared/interfaces/accoumt';
@@ -15,13 +15,10 @@ import { OrderService } from 'src/app/shared/services/order/order.service';
   styleUrls: ['./goods-page.component.scss']
 })
 export class GoodsPageComponent implements OnInit {
-
-
-
   public goddsList!: Array<GoodsResponse>
   private eventSubscription!: Subscription;
   public categoriName = ''
-
+  public updateBasket: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(
     private gooService: GoodsService,
@@ -78,12 +75,10 @@ export class GoodsPageComponent implements OnInit {
     } else {
       basket.push(goods);
     }
-    console.log(basket);
-    console.log(goods);
-
     localStorage.setItem('basket', JSON.stringify(basket))
     goods.count = 1
     this.orderService.chageBasket.next(true)
+    this.updateBasket.emit();
   }
 
 

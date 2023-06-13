@@ -27,6 +27,10 @@ export class BasketComponent implements OnInit {
   ngOnInit(): void {
     this.addToBasket()
     this.updateBasket()
+    this.orderService.chageBasket.subscribe(() => {
+      this.addToBasket();
+      this.summPrice(); 
+    });
   }
 
   quantity_goods(goods: GoodsResponse, value: boolean): void {
@@ -41,13 +45,14 @@ export class BasketComponent implements OnInit {
   }
 
   addToBasket(): void {
-    let emptyBasket = document.querySelector('.empty_basket')
-    if (localStorage.length > 0 && localStorage.getItem('basket')) {
-      this.basket = JSON.parse(localStorage.getItem('basket') as string);
-      this.summPrice()
-      emptyBasket?.classList.add('closrEmptyBasket')
-        }else{
-      emptyBasket?.classList.remove('closrEmptyBasket')
+    let emptyBasket = document.querySelector('.empty_basket');
+    const basketData = localStorage.getItem('basket');
+    if (basketData && basketData !== 'null') {
+      this.basket = JSON.parse(basketData);
+      this.summPrice();
+      emptyBasket?.classList.add('closrEmptyBasket');
+    } else {
+      emptyBasket?.classList.remove('closrEmptyBasket');
     }
   }
 
@@ -71,10 +76,10 @@ export class BasketComponent implements OnInit {
     }
     else {
       basket.push(good);
-
     }
     localStorage.setItem('basket', JSON.stringify(basket))
     this.orderService.chageBasket.next(true)
+    this.summPrice()
   }
 
   delOrder(order: any) {
@@ -91,7 +96,7 @@ export class BasketComponent implements OnInit {
       this.orderService.chageBasket.next(true)
       this.dialogRef.beforeClosed()
     }
-   
+    this.summPrice(); 
   }
 
   addOrder(order: any): void {

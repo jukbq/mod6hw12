@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GoodsResponse } from 'src/app/shared/interfaces/goods';
-
 import { GoodsService } from 'src/app/shared/services/goods/goods.service';
 import { OrderService } from 'src/app/shared/services/order/order.service';
 
@@ -14,7 +13,7 @@ export class CoodInfoComponent implements OnInit {
 
   public goodsData!: GoodsResponse;
   public goodArr: Array<GoodsResponse> = [];
-
+  public updateBasket: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(
     private goodService: GoodsService,
@@ -57,6 +56,7 @@ export class CoodInfoComponent implements OnInit {
     localStorage.setItem('basket', JSON.stringify(basket))
     goods.count = 1
     this.orderService.chageBasket.next(true)
+    this.updateBasket.emit();
   }
 
 

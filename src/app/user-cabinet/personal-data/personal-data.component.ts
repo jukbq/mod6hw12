@@ -19,7 +19,8 @@ export class PersonalDataComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userIndo()
+    this.logFormInit();
+    this.userIndo();
   }
 
 
